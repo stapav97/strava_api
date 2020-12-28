@@ -3,6 +3,7 @@ package com.example.stravaapi
 import android.app.Application
 import com.example.stravaapi.di.AppComponent
 import com.example.stravaapi.di.DaggerAppComponent
+import com.example.stravaapi.utils.lifecycle.addLifecycleLogger
 import com.example.stravaapi.utils.network.NetworkMonitor
 
 class App : Application() {
@@ -23,6 +24,8 @@ class App : Application() {
         }.build()
 
         NetworkMonitor(this).startNetworkCallBack()
+
+        addLifecycleLogger()
     }
 
 

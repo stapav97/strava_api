@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
+import com.example.stravaapi.App
 import com.example.stravaapi.BuildConfig
 import com.example.stravaapi.databinding.ActivityLoginBinding
 import com.example.stravaapi.ui.main.MainActivity
@@ -18,6 +19,7 @@ class LoginActivity : AppCompatActivity() {
     private lateinit var mBinding: ActivityLoginBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        (application as App).component!!.inject(this)
         super.onCreate(savedInstanceState)
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)  //Disable Dark mode
 

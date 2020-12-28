@@ -1,4 +1,4 @@
-package com.example.stravaapi.ui.base
+package com.example.stravaapi.ui.base.commands
 
 import androidx.annotation.MainThread
 import androidx.lifecycle.DefaultLifecycleObserver
