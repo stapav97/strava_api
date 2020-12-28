@@ -3,6 +3,7 @@ package com.example.stravaapi
 import android.app.Application
 import com.example.stravaapi.di.AppComponent
 import com.example.stravaapi.di.DaggerAppComponent
+import com.example.stravaapi.utils.network.NetworkMonitor
 
 class App : Application() {
 
@@ -20,10 +21,13 @@ class App : Application() {
         component = DaggerAppComponent.builder().also {
             it.context(this)
         }.build()
+
+        NetworkMonitor(this).startNetworkCallBack()
     }
 
 
     override fun onTerminate() {
         super.onTerminate()
+        NetworkMonitor(this).stopNetworkCallback()
     }
 }
