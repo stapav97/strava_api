@@ -1,6 +1,7 @@
 package com.example.stravaapi.data.network
 
 import com.example.stravaapi.BuildConfig
+import com.example.stravaapi.data.model.AccessToken
 import com.google.gson.GsonBuilder
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -13,15 +14,13 @@ import java.util.concurrent.TimeUnit
 
 interface StravaAuthService {
 
-    //TODO refactor getAccessToken
-
     @POST("oauth/access_token")
-    fun getAccessToken(
+    suspend fun getAccessToken(
         @Query("client_id") clientId: String,
         @Query("client_secret") clientSecret: String,
         @Query("code") code: String,
         @Query("grant_type") grantType: String = "authorization_code"
-    )
+    ): AccessToken
 
     companion object {
         fun create(): StravaAuthService {

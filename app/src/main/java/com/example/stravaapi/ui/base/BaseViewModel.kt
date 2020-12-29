@@ -6,7 +6,7 @@ import com.example.stravaapi.utils.Logger
 import com.example.stravaapi.utils.lifecycle.ViewModelTracker
 import com.example.stravaapi.utils.logTag
 
-class BaseViewModel : ViewModel() {
+open class BaseViewModel : ViewModel() {
     private val logTag = logTag()
 
     val mViewModelTracker: ViewModelTracker
