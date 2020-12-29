@@ -15,7 +15,7 @@ import java.util.concurrent.TimeUnit
 interface StravaAuthService {
 
     @POST("oauth/access_token")
-    suspend fun getAccessToken(
+     fun getAccessToken(
         @Query("client_id") clientId: String,
         @Query("client_secret") clientSecret: String,
         @Query("code") code: String,
